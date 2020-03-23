@@ -32,7 +32,32 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-	SDL_Rect test = { 300, 400, 200, 200 };
+	void DrawTest();
+	void DrawRay();
+
+	//Test1
+	SDL_Rect test = { 928, 160, 32, 32 };
+	SDL_Rect test2 = { 930, 162, 28, 28 };
+	SDL_Rect test3 = { 932, 164, 24, 24 };
+	SDL_Rect test4 = { 934, 166, 20, 20 };
+	SDL_Rect test5 = { 936, 168, 16, 16 };
+	SDL_Rect test6 = { 938, 170, 12, 12 };
+	SDL_Rect test7 = { 940, 172, 8, 8 };
+
+	//RayTest
+	SDL_Rect ray = { 960, 160, 4, 32 };
+	SDL_Rect ray2 = { 960, 160, 4, 32 };
+	SDL_Rect ray3 = { 960, 160, 4, 32 };
+	SDL_Rect ray4 = { 960, 160, 4, 32 };
+	SDL_Rect ray5 = { 960, 160, 4, 32 };
+	SDL_Rect ray6 = { 960, 160, 4, 32 };
+	SDL_Rect ray7 = { 960, 160, 4, 32 };
+	SDL_Rect ray8 = { 960, 160, 4, 32 };
+
+
+
+	SDL_Texture* graphics = nullptr;
+	SDL_Rect testo = { 968, 160, 200, 200 };
 
 private:
 };

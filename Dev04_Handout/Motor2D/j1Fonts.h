@@ -30,7 +30,7 @@ public:
 
 	// Create a surface from text
 	void BlitText(int x, int y, int bmp_font_id, const char* text) const;
-
+	
 
 private:
 	Font	 fonts[MAX_FONTS];

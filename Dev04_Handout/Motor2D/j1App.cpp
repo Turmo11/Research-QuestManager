@@ -15,7 +15,6 @@
 #include "j1Collision.h"
 #include "j1Fonts.h"
 #include "j1Gui.h"
-#include "j1Console.h"
 #include "j1App.h"
 
 
@@ -37,7 +36,6 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	collider = new j1Collision();
 	fonts = new j1Fonts();
 	gui = new j1Gui();
-	console = new j1Console();
 
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -55,8 +53,9 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(fruit);
 
 	AddModule(fonts);
+
 	AddModule(gui);
-	AddModule(console);
+
 
 	// render last to swap buffer
 	AddModule(render);

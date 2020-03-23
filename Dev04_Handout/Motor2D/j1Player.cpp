@@ -86,9 +86,9 @@ bool j1Player::Update(float dt)
 	hitbox.x = pos.x;
 	hitbox.y = pos.y;
 
-	App->render->DrawQuad(hitbox, 255, 255, 0, 255);
+	App->render->DrawQuad(hitbox, 0, 255, 255, 255);
 
-	LOG("%d,%d", pos.x, pos.y);
+	//LOG("%d,%d", pos.x, pos.y);
 	return true;
 }
 

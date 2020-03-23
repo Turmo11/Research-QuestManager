@@ -18,7 +18,6 @@ class j1Fruit;
 class j1Collision;
 class j1Fonts;
 class j1Gui;
-class j1Console;
 class j1App
 {
 public:
@@ -93,7 +92,6 @@ public:
 	j1Collision*		collider;
 	j1Fonts*			fonts;
 	j1Gui*				gui;
-	j1Console*			console;
 
 private:
 
