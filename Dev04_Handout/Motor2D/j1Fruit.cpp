@@ -95,28 +95,21 @@ bool j1Fruit::Update(float dt)
 		switch (bowl[i].type)
 		{
 		case CHERRY:
-
 			App->render->DrawQuad(bowl[i].f_hitbox, 150, 9, 21, 255);
 			break;
 		case BANANA:
-
 			App->render->DrawQuad(bowl[i].f_hitbox, 247, 225, 79, 255);
 			break;
 		case ORANGE:
-
 			App->render->DrawQuad(bowl[i].f_hitbox, 245, 105, 24, 255);
 			break;
 		case WATERMELON:
-
 			App->render->DrawQuad(bowl[i].f_hitbox, 235, 14, 14, 255);
 			break;
 		case MANGO:
-
 			App->render->DrawQuad(bowl[i].f_hitbox, 255, 215, 0, 255);
 			break;
-
 		}
-
 	}
 	
 	UpdateScoreboard();

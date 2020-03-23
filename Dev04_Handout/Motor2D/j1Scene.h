@@ -34,6 +34,9 @@ public:
 
 	void DrawTest();
 	void DrawRay();
+	void DrawQ3();
+	void DrawQ4();
+	void DrawQ5();
 
 	//Test1
 	SDL_Rect test = { 928, 160, 32, 32 };
@@ -46,13 +49,13 @@ public:
 
 	//RayTest
 	SDL_Rect ray = { 960, 160, 4, 32 };
-	SDL_Rect ray2 = { 960, 160, 4, 32 };
-	SDL_Rect ray3 = { 960, 160, 4, 32 };
-	SDL_Rect ray4 = { 960, 160, 4, 32 };
-	SDL_Rect ray5 = { 960, 160, 4, 32 };
-	SDL_Rect ray6 = { 960, 160, 4, 32 };
-	SDL_Rect ray7 = { 960, 160, 4, 32 };
-	SDL_Rect ray8 = { 960, 160, 4, 32 };
+	SDL_Rect ray2 = { 964, 160, 4, 32 };
+	SDL_Rect ray3 = { 968, 160, 4, 32 };
+	SDL_Rect ray4 = { 972, 160, 4, 32 };
+	SDL_Rect ray5 = { 976, 160, 4, 32 };
+	SDL_Rect ray6 = { 980, 160, 4, 32 };
+	SDL_Rect ray7 = { 984, 160, 4, 32 };
+	SDL_Rect ray8 = { 988, 160, 4, 32 };
 
 
 
