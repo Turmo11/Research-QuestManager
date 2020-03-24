@@ -69,4 +69,14 @@ _Quests Structure_
 
 One last thing to comment before getting with the TODO's, I've mentioned many times that the Quest System interacts with many different systems, that's why we will also usually create an Event System that is able to track the different events that happen in the game and is in charge of transferring all of that information to the quest system. However, you won't find a structured Event System in this project since I opted for a more simple and visual way of understanding a quest system. Once said that, let's head over the TODO's
 
+## TODO
+
+The environment I chose for the project is a simple but yet very visual game that consists of a _player (blue square)_ that can move using WASD or the arrows. Its mission is to collect different fruits from the board (5 different types of fruits, Cherries, Bananas, Oranges, Watermelons and Mangoes). The main goal of the game is to earn five achievements completing quests
+
+### TODO 0
+Start by taking a look at the basis I showed you above and make sure you understand the elements of the Quest System Structure and the Quests
+
+This should only take a moment but it's crucial to keep up with the rest
+
+### TODO 1
 
