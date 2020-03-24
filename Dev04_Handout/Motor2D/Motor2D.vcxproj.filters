@@ -43,14 +43,14 @@
     <ClCompile Include="j1Fonts.cpp">
       <Filter>Desenvolupament  ========\Base Modules</Filter>
     </ClCompile>
-    <ClCompile Include="j1Gui.cpp">
-      <Filter>Desenvolupament  ========\UI</Filter>
-    </ClCompile>
     <ClCompile Include="j1App.cpp">
       <Filter>Desenvolupament  ========\Core</Filter>
     </ClCompile>
     <ClCompile Include="j1Main.cpp">
       <Filter>Desenvolupament  ========\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="j1QuestManager.cpp">
+      <Filter>Research</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,14 +114,14 @@
     <ClInclude Include="j1Fonts.h">
       <Filter>Desenvolupament  ========\Base Modules</Filter>
     </ClInclude>
-    <ClInclude Include="j1Gui.h">
-      <Filter>Desenvolupament  ========\UI</Filter>
-    </ClInclude>
     <ClInclude Include="j1App.h">
       <Filter>Desenvolupament  ========\Core</Filter>
     </ClInclude>
     <ClInclude Include="j1Module.h">
       <Filter>Desenvolupament  ========\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="j1QuestManager.h">
+      <Filter>Research</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -146,16 +146,13 @@
     <Filter Include="Desenvolupament  ========\Tools\Timers">
       <UniqueIdentifier>{b4ddeef7-b2bd-4abe-9120-f686c0272e95}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Desenvolupament  ========\UI">
-      <UniqueIdentifier>{35712bf3-55d7-4453-8478-424199a54a7c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Desenvolupament  ========\Core">
       <UniqueIdentifier>{77ab359e-e80a-4e50-9478-ca8675826f8c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Desenvolupament  ========\Base Modules">
       <UniqueIdentifier>{244722d1-90ce-423d-8e7a-556211865a32}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Desenvolupament  ========\Research">
+    <Filter Include="Research">
       <UniqueIdentifier>{87ca0596-152d-4cc5-9595-a4eae95c95fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

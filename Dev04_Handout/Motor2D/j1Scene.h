@@ -32,8 +32,12 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-	void DrawTest();
-	void DrawRay();
+	void CheckEvent();
+	void OrderEvent();
+
+	void DrawQ0();
+	void DrawQ1();
+	void DrawQ2();
 	void DrawQ3();
 	void DrawQ4();
 	void DrawQ5();
@@ -60,9 +64,16 @@ public:
 
 
 	SDL_Texture* graphics = nullptr;
-	SDL_Rect testo = { 968, 160, 200, 200 };
 
-private:
+	int r = 0;
+	int score = 0;
+
+	bool cherry = false;
+	bool banana = false;
+	bool orange = false;
+	bool watermelon = false;
+	bool mango = false;
+
 };
 
 #endif // __j1SCENE_H__

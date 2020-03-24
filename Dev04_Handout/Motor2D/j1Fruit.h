@@ -3,18 +3,27 @@
 #include "p2Point.h"
 #include "j1Module.h"
 
-#define MAX_FRUITS 10
+#define MAX_FRUITS 25 
+
+
 struct SDL_Texture;
 struct Collider;
 
-enum f_type {
-
+enum f_type 
+{
 	CHERRY = 0,
 	BANANA,
 	ORANGE,
 	WATERMELON,
 	MANGO,
 	NONE
+};
+
+enum difficulty
+{
+	EASY = 0,
+	INTERMEDIATE,
+	HARD
 };
 
 
@@ -42,12 +51,21 @@ public:
 	void Eaten();
 	void UpdateScoreboard();
 	void CheckCollision();
+	void Restart();
 
 	// Called before quitting
 	bool CleanUp();
 
+	int c_points = 0;
+	int b_points = 0;
+	int o_points = 0;
+	int w_points = 0;
+	int m_points = 0;
 
 private:
+
+	difficulty difficulty_level;
+	
 
 	f_type type;
 
@@ -57,15 +75,6 @@ private:
 	SDL_Texture* graphics;
 
 	Collider* f_col;
-
-	
-
-	int c_points = 0;
-	int b_points = 0;
-	int o_points = 0;
-	int w_points = 0;
-	int m_points = 0;
-	
 
 
 	//Scoreboard
@@ -110,10 +119,6 @@ private:
 	SDL_Rect m5 = { 1120, 704, 32, 32 };
 	SDL_Rect m_check = { 1170, 710, 20, 20 };
 
-	bool cherry = false;
-	bool banana = false;
-	bool orange = false;
-	bool watermelon = false;
-	bool mango = false;
+	
 	
 };

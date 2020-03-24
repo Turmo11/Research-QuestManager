@@ -14,7 +14,7 @@
 #include "j1Fruit.h"
 #include "j1Collision.h"
 #include "j1Fonts.h"
-#include "j1Gui.h"
+#include "j1QuestManager.h"
 #include "j1App.h"
 
 
@@ -35,7 +35,7 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	fruit = new j1Fruit();
 	collider = new j1Collision();
 	fonts = new j1Fonts();
-	gui = new j1Gui();
+	quest_manager = new j1QuestManager();
 
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -54,7 +54,7 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 
 	AddModule(fonts);
 
-	AddModule(gui);
+	AddModule(quest_manager);
 
 
 	// render last to swap buffer
@@ -169,6 +169,21 @@ pugi::xml_node j1App::LoadConfig(pugi::xml_document& config_file) const
 		LOG("Could not load map xml file config.xml. pugi error: %s", result.description());
 	else
 		ret = config_file.child("config");
+
+	return ret;
+}
+
+pugi::xml_node j1App::LoadQuests(pugi::xml_document& file) const
+{
+	pugi::xml_node ret;
+
+	pugi::xml_parse_result result = file.load_file("quest_data.xml");
+
+	if (result == NULL)
+		LOG("Could not load  xml file <loadxmlfunction> pugi error: %s", result.description());
+	else
+		ret = file.child("quests");
+		LOG("XML LOADED");
 
 	return ret;
 }

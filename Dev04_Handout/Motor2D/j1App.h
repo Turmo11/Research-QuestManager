@@ -17,7 +17,7 @@ class j1Player;
 class j1Fruit;
 class j1Collision;
 class j1Fonts;
-class j1Gui;
+class j1QuestManager;
 class j1App
 {
 public:
@@ -53,10 +53,15 @@ public:
 	void SaveGame() const;
 	void GetSaveGames(p2List<p2SString>& list_to_fill) const;
 
-private:
-
 	// Load config file
 	pugi::xml_node LoadConfig(pugi::xml_document&) const;
+
+	//Load quest file
+	pugi::xml_node LoadQuests(pugi::xml_document& quest_file) const;
+
+private:
+
+	
 
 	// Call modules before each loop iteration
 	void PrepareUpdate();
@@ -91,7 +96,7 @@ public:
 	j1Fruit*			fruit;
 	j1Collision*		collider;
 	j1Fonts*			fonts;
-	j1Gui*				gui;
+	j1QuestManager*		quest_manager;
 
 private:
 

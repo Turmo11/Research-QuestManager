@@ -10,6 +10,7 @@
 #include "j1Map.h"
 #include "j1Input.h"
 #include "j1Collision.h"
+#include "j1Scene.h"
 #include <time.h>
 #include <list>
 
@@ -47,13 +48,7 @@ bool j1Fruit::PreUpdate()
 	}
 	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 	{
-		c_points = 0;
-		b_points = 0;
-		o_points = 0;
-		w_points = 0;
-		m_points = 0;
-		LOG("RESTART");
-
+		Restart();
 	}
 	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
 	{
@@ -178,7 +173,7 @@ void j1Fruit::UpdateScoreboard()
 		App->render->DrawQuad(c4, 150, 9, 21, 200);
 		App->render->DrawQuad(c5, 150, 9, 21, 200);
 		App->render->DrawQuad(c_check, 0, 255, 0, 255);
-		cherry = true;
+		App->scene->cherry = true;
 		break;
 	default:
 		App->render->DrawQuad(c1, 150, 9, 21, 200);
@@ -220,7 +215,7 @@ void j1Fruit::UpdateScoreboard()
 		App->render->DrawQuad(b4, 247, 225, 79, 200);
 		App->render->DrawQuad(b5, 247, 225, 79, 200);
 		App->render->DrawQuad(b_check, 0, 255, 0, 255);
-		banana = true;
+		App->scene->banana = true;
 		break;
 	default:
 		App->render->DrawQuad(b1, 247, 225, 79, 200);
@@ -262,7 +257,7 @@ void j1Fruit::UpdateScoreboard()
 		App->render->DrawQuad(o4, 245, 105, 24, 200);
 		App->render->DrawQuad(o5, 245, 105, 24, 200);
 		App->render->DrawQuad(o_check, 0, 255, 0, 255);
-		orange = true;
+		App->scene->orange = true;
 		break;
 	default:
 		App->render->DrawQuad(o1, 245, 105, 24, 200);
@@ -304,7 +299,7 @@ void j1Fruit::UpdateScoreboard()
 		App->render->DrawQuad(w4, 235, 14, 14, 200);
 		App->render->DrawQuad(w5, 235, 14, 14, 200);
 		App->render->DrawQuad(w_check, 0, 255, 0, 255);
-		watermelon = true;
+		App->scene->watermelon = true;
 		break;
 	default:
 		App->render->DrawQuad(w1, 235, 14, 14, 200);
@@ -346,7 +341,7 @@ void j1Fruit::UpdateScoreboard()
 		App->render->DrawQuad(m4, 255, 215, 0, 200);
 		App->render->DrawQuad(m5, 255, 215, 0, 200);
 		App->render->DrawQuad(m_check, 0, 255, 0, 255);
-		mango = true;
+		App->scene->mango = true;
 		break;
 	default:
 		App->render->DrawQuad(m1, 255, 215, 0, 200);
@@ -387,4 +382,22 @@ void j1Fruit::CheckCollision()
 			bowl[i].Spawn();
 		}
 	}
+}
+
+void j1Fruit::Restart()
+{
+	c_points = 0;
+	b_points = 0;
+	o_points = 0;
+	w_points = 0;
+	m_points = 0;
+
+	App->scene->cherry = false;
+	App->scene->banana = false;
+	App->scene->orange = false;
+	App->scene->watermelon = false;
+	App->scene->mango = false;
+
+	LOG("RESTART");
+
 }
