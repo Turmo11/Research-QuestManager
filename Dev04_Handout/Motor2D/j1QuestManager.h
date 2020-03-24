@@ -31,7 +31,6 @@ public:
 
 class j1QuestManager : public j1Module 
 {
-
 public:
 
 	j1QuestManager();
@@ -39,8 +38,6 @@ public:
 
 	bool Awake(pugi::xml_node& file);
 	bool Start();
-	
-
 
 	pugi::xml_document quest_data;
 
