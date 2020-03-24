@@ -2,7 +2,7 @@
 
  Hi! My name is [Guillem Turmo Gonzalez](https://www.linkedin.com/in/gturmo/) and this is a Research Project about a Quest Manager I did as a student of the Bachelor's Degree in Video Games by UPC at CITM. This content is generated for the second year's subject Project 2, under supervision of lecturer [Ramon Santamaria](https://www.linkedin.com/in/raysan/). 
  
-![](https://github.com/Turmo11/Research-QuestManager/blob/master/docs/images/ProfilePic.png)
+![](docs/images/ProfilePic.png)
 
 ## What I'll be talking about
 
@@ -52,5 +52,5 @@ Many people might not agree, they may tell you that lots of huge games came out 
 ## Implementing a Quest System
 
 After that short introduction, I'm sure you must be expecting the Quest Manager to be a real challenge, however the core basic Quest manager it would actually look something similar to this, which is basically manages an xml file from where we will get our quest data, and three lists to store and organize quests as they get loaded, activated or done.
-![](docs/images/core.PNG) ![](docs/images/quest.PNG)
+![Quest Sytem Structure](docs/images/core.PNG) ![Quests Structure](docs/images/quest.PNG)
 
