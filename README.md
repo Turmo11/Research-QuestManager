@@ -114,3 +114,9 @@ We'll be working mainly on the QuestManager module and header but we will also u
 ### TODO 7
 
 - As the final TODO, just take a look at how we are only drawing an achievement (quest completed) once they are in the finished_quests list. I'd also like you to take a look at how we make the 4th achievement a different quest by forcing the player to complete the side-quests in a particular order
+
+## Thanks!!
+
+## Interesting Links
+- [Playlist](https://www.youtube.com/playlist?list=PL4G2bSPE_8umJfOuXxut28OQyIliW2Pfp)
+- [Documentation](https://www.youtube.com/watch?v=QPOu4hIRCko&list=PLlOitY0Isb1qMfO2qXY_QxoDuax037ghb&index=26&t=323s)
