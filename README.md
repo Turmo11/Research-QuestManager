@@ -2,6 +2,7 @@
 
  Hi! My name is [Guillem Turmo Gonzalez](https://www.linkedin.com/in/gturmo/) and this is a Research Project about a Quest Manager I did as a student of the Bachelor's Degree in Video Games by UPC at CITM. This content is generated for the second year's subject Project 2, under supervision of lecturer [Ramon Santamaria](https://www.linkedin.com/in/raysan/). 
  
+ 
 ![](docs/images/ProfilePic.png)
 
 ## What I'll be talking about
@@ -37,7 +38,7 @@ You might have been thinking about that project you've had in mind for a while a
 
 Many people might not agree, they may tell you that lots of huge games came out without any kind of quest system, and even though there's always exceptions, they would be surprised of how far from reality they are. And that's because the beauty of quests is that they can appear in many different forms. Some designers lean towards a more visible quest system where you literally own a _Mission book_ that shows thousands of different quests to unlock. 
 
-![](docs/images/book.png)
+<img align="center" width="200" height="200" src="docs/images/book.png">
 
 However, others tend to implement a more subtle system where you won't even feel like you are following a set of quests. And that is because Quests are such a key element in video game design and development that is really hard to avoid them. Instead of doing that, you should try to take the most benefit out of a well designed Quest Manager. Here are a few things you should take into account while brainstorming about how you want your Quest System to be like:
 
