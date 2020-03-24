@@ -31,9 +31,6 @@
     <ClCompile Include="j1Player.cpp">
       <Filter>Desenvolupament  ========\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="j1Timer.cpp">
-      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
-    </ClCompile>
     <ClCompile Include="j1Fruit.cpp">
       <Filter>Desenvolupament  ========\Entities</Filter>
     </ClCompile>
@@ -51,6 +48,12 @@
     </ClCompile>
     <ClCompile Include="j1QuestManager.cpp">
       <Filter>Research</Filter>
+    </ClCompile>
+    <ClCompile Include="j1PerfTimer.cpp">
+      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="j1Timer.cpp">
+      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +105,6 @@
     <ClInclude Include="j1Player.h">
       <Filter>Desenvolupament  ========\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="j1Timer.h">
-      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
-    </ClInclude>
     <ClInclude Include="j1Fruit.h">
       <Filter>Desenvolupament  ========\Entities</Filter>
     </ClInclude>
@@ -122,6 +122,12 @@
     </ClInclude>
     <ClInclude Include="j1QuestManager.h">
       <Filter>Research</Filter>
+    </ClInclude>
+    <ClInclude Include="j1PerfTimer.h">
+      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="j1Timer.h">
+      <Filter>Desenvolupament  ========\Tools\Timers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

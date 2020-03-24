@@ -21,7 +21,9 @@
 // Constructor
 j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 {
-	frames = 0;
+	PERF_START(perf_timer);
+
+	/*frames = 0;*/
 	want_to_save = want_to_load = false;
 
 	input = new j1Input();
@@ -61,7 +63,7 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(render);
 
 
-
+	PERF_PEEK(perf_timer);
 }
 
 // Destructor
@@ -88,6 +90,8 @@ void j1App::AddModule(j1Module* module)
 // Called before render is available
 bool j1App::Awake()
 {
+	PERF_START(perf_timer);
+
 	pugi::xml_document	config_file;
 	pugi::xml_node		config;
 	pugi::xml_node		app_config;
@@ -95,6 +99,8 @@ bool j1App::Awake()
 	bool ret = false;
 		
 	config = LoadConfig(config_file);
+
+	frame_cap = 60;
 
 	if(config.empty() == false)
 	{
@@ -117,12 +123,14 @@ bool j1App::Awake()
 		}
 	}
 
+	PERF_PEEK(perf_timer);
 	return ret;
 }
 
 // Called before the first frame
 bool j1App::Start()
 {
+	PERF_START(perf_timer);
 	bool ret = true;
 	p2List_item<j1Module*>* item;
 	item = modules.start;
@@ -133,6 +141,7 @@ bool j1App::Start()
 		item = item->next;
 	}
 
+	PERF_PEEK(perf_timer);
 	return ret;
 }
 
@@ -191,6 +200,11 @@ pugi::xml_node j1App::LoadQuests(pugi::xml_document& file) const
 // ---------------------------------------------
 void j1App::PrepareUpdate()
 {
+	frame_count++;
+	frames_last_second++;
+
+	dt = frame_timer.ReadSec();						//Keeps track of the amount of time that has passed since last frame in seconds (processing time of a frame: Frame 1: 0.033secs, ...).
+	frame_timer.Start();
 }
 
 // ---------------------------------------------
@@ -201,6 +215,60 @@ void j1App::FinishUpdate()
 
 	if(want_to_load == true)
 		LoadGameNow();
+
+	if (last_second_timer.ReadMs() > 1000)
+	{
+		last_second_timer.Start();
+		prev_sec_frames = frames_last_second;
+		frames_last_second = 0;
+	}
+
+	float frame_cap_ms = 1000 / frame_cap;
+	float current_frame_ms = frame_timer.Read();
+
+	if (framesAreCapped)
+	{
+		if (current_frame_ms < frame_cap_ms)						//If the current frame processing time is lower than the specified frame_cap. Timer instead of PerfTimer was used because SDL_Delay is inaccurate.
+		{
+			true_delay_timer.Start();
+
+			SDL_Delay(frame_cap_ms - current_frame_ms);				//SDL_Delay delays processing for a specified time. In this case, it delays for the difference in ms between the frame cap (30fps so 33,3ms per frame) and the current frame.
+
+			int intended_delay = frame_cap_ms - current_frame_ms;
+
+			//LOG("We waited for %d milliseconds and got back in %f", intended_delay, true_delay_timer.ReadMs());
+		}
+	}
+
+	float avg_fps = frame_count / startup_timer.ReadSec();
+	seconds_since_startup = startup_timer.ReadSec();
+	uint32 last_frame_ms = frame_timer.Read();
+	uint32 frames_on_last_update = prev_sec_frames;					//Keeps track of how many frames were processed the last second.
+
+	if (framesAreCapped)
+	{
+		frameCapOnOff = "On";
+	}
+	else
+	{
+		frameCapOnOff = "Off";
+	}
+
+	if (vsyncIsActive)
+	{
+		vsyncOnOff = "On";
+	}
+	else
+	{
+		vsyncOnOff = "Off";
+	}
+
+	static char title[256];
+
+	sprintf_s(title, 256, "Av.FPS: %.2f / Last Frame Ms: %02u / Last sec frames: %i / Last dt: %.3f / Time since startup: %.3f / Frame Count: %lu / %d / Vsync: %s / Frame cap: %s",
+		avg_fps, last_frame_ms, frames_on_last_update, dt, seconds_since_startup, frame_count, vsyncOnOff, frameCapOnOff, frameCapOnOff);
+
+	App->win->SetTitle(title);
 }
 
 // Call modules before each loop iteration
