@@ -63,4 +63,6 @@ We then also have a simple object _Quest_ with some of the info you might need w
 
 _Quests Structure_
 
+One last thing to comment before getting with the TODO's, I've mentioned many times that the Quest System interacts with many different systems, that's why we will also usually create an Event System that is able to track the different events that happen in the game and is in charge of transferring all of that information to the quest system. However, you won't find a structured Event System in this project since I opted for a more simple and visual way of understanding a quest system. Once said that, let's head over the TODO's
+
 
