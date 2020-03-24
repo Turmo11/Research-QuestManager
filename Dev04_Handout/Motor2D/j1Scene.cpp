@@ -233,6 +233,8 @@ void j1Scene::CheckEvent()
 		// once it's completed, therefore we need to transfer the complete quests to the finished_quests list 
 	}
 	
+	//TODO 7: As the final TODO, just take a look at how we are only drawing an achievement (quest completed) once they are in the finished_quests list
+	// I'd also like you to take a look at how we make the 4th achievement a different quest by forcing the player to complete the side-quests in a particular order
 	for (std::list <Quest*>::iterator it = App->quest_manager->finished_quests.begin(); it != App->quest_manager->finished_quests.end(); it++)
 	{
 		int quest_id = (*it)->id;
