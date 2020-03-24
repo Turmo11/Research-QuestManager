@@ -4,10 +4,10 @@
 #include <list>
 #include "SDL/include/SDL_rect.h"
 
-/*TODO 0:
-Look at the structure mentioned above presented by the Quests, Events and the Quest Manager.
-*/
 
+//TODO 0: Start by taking a look at the basis I showed you above and make sure you understand the elements of the Quest System Structure and the Quests
+
+//TODO 1: Once you've understood this, take a bit more time to read and observe the syntax of the xml that we will be using to load the data called quest_data
 
 class Quest
 {

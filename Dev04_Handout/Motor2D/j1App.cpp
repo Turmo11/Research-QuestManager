@@ -182,6 +182,8 @@ pugi::xml_node j1App::LoadConfig(pugi::xml_document& config_file) const
 	return ret;
 }
 
+//TODO 2: All of our data will be parsed from that XML, therefore we need to create a new function in the App that will read and load that XML for us
+
 pugi::xml_node j1App::LoadQuests(pugi::xml_document& file) const
 {
 	pugi::xml_node ret;

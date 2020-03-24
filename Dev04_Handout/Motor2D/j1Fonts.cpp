@@ -55,15 +55,6 @@ int j1Fonts::Load(const char* texture_path, const char* characters, uint rows)
 	fonts[id].row_chars = fonts[id].len / rows;
 	SDL_strlcpy(fonts[id].table, characters, fonts[id].len+1);
 
-
-	// TODO 1: Finish storing font data
-
-
-	// table: array of chars to have the list of characters
-	// row_chars: amount of chars per row of the texture
-	// char_w: width of each character
-	// char_h: height of each character
-
 	LOG("Successfully loaded BMP font from %s", texture_path);
 
 	return id;

@@ -29,11 +29,12 @@ j1QuestManager::~j1QuestManager()
 bool j1QuestManager::Awake(pugi::xml_node& config) 
 {
 	LOG("STARTING QUEST_MANAGER");
-	/*TODO 2:
-	We will need to read in the QuestManager Start the own xml file that will contain all the necessary data
-	for quests and events. As in config.xml, a specific myApp function has been created for read this file.
-	The function is called LoadQuests.
-	*/
+	
+
+	//TODO 3: Now that we have the XML loaded, we'll begin loading all of the info into our Quest Manager. 
+	//Remember to use the LoadQuest function we just created and to use the proper syntax. 
+	//We will code a loop that creates a new_quest and loads all of its info for every quest on the XML
+
 	pugi::xml_node quest_node;
 	quest_node = App->LoadQuests(quest_data);  //Loads the xml file that you pass in the "xmlfile" and returns a node
 
@@ -44,12 +45,7 @@ bool j1QuestManager::Awake(pugi::xml_node& config)
 
 	for (quest_node = quest_node.child("quest"); quest_node; quest_node = quest_node.next_sibling("quest"))
 	{
-		/*TODO 3:
-		Respecting the structure that has been seen in the xml in TODO 1, all the data will have to be read and equaled
-		with those of a new Quest that we will create.
-		To do this, we will create a loop that goes through all the quests in the questData file. Inside the loop, a new
-		quest will be created (with the class that was created previously) and its DNI and reward will be taken from the xml file.
-		*/
+		
 
 		Quest* new_quest = new Quest();
 
@@ -61,12 +57,10 @@ bool j1QuestManager::Awake(pugi::xml_node& config)
 		new_quest->reward = quest_node.attribute("reward").as_int();
 		new_quest->requisites = quest_node.attribute("requisites").as_int();
 
-		/*TODO 5:
-		Now the function seen in the last TODO is applied. As you can see, it is matched with the activationEvent of the quest. Now you have
-		to do the same but with all the subEvent presented by the quests, so you will have to create a for going through all the subEvent
-		and entering them in the list of subMissions within the quest itself.
-		To introduce them we can use the push_back() function and pass it as parameter the new event (created with the createEvent function).
-		*/
+		//TODO 4: Right now, we are creating the Quests but we are not storing them properly, 
+		//therefore after every loop we will push them into the loaded_quests list, 
+		//however if a quest's trigger is equal to 1 (meaning that is always active) we will directly put those into the active_quests list
+
 		if (new_quest->trigger == 1)
 		{
 			active_quests.push_back(new_quest);

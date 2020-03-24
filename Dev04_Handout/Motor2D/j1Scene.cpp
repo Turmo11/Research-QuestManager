@@ -46,28 +46,10 @@ bool j1Scene::PreUpdate()
 // Called each loop iteration
 bool j1Scene::Update(float dt)
 {
-	if(App->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
-		App->LoadGame();
-
-	if(App->input->GetKey(SDL_SCANCODE_S) == KEY_DOWN)
-		App->SaveGame();
-
-	
+	//scoreboard
 	DrawQ0();
-	/*DrawQ1();
-	DrawQ2();
-	DrawQ3();
-	DrawQ4();
-	DrawQ5();*/
-
+	
 	App->map->Draw();
-
-	p2SString title("Map:%dx%d Tiles:%dx%d Tilesets:%d",
-					App->map->data.width, App->map->data.height,
-					App->map->data.tile_width, App->map->data.tile_height,
-					App->map->data.tilesets.count());
-
-	//App->win->SetTitle(title.GetString());
 	
 	OrderEvent();
 	CheckEvent();
@@ -182,6 +164,10 @@ void j1Scene::DrawQ5()
 
 }
 
+//TODO 5: Now that we have our base working, it's time to implement it with the context, 
+//therefore we are gonna create a simple function that checks the events that we are interested in. 
+//The skeleton is already implemented, therefore you will only need to fill the loop that will iterate the active_quests list and checks those conditions
+
 void j1Scene::CheckEvent()
 {
 	for (std::list <Quest*>::iterator it = App->quest_manager->active_quests.begin(); it != App->quest_manager->active_quests.end(); it++) 
@@ -242,10 +228,9 @@ void j1Scene::CheckEvent()
 		default:
 			break;
 		}
-		if ((*it)->completed == true)
-		{
-
-		}
+		
+		//TODO 6: We are almost done, we are currently correctly checking the active_quests list but we aren't doing anything with a quest
+		// once it's completed, therefore we need to transfer the complete quests to the finished_quests list 
 	}
 	
 	for (std::list <Quest*>::iterator it = App->quest_manager->finished_quests.begin(); it != App->quest_manager->finished_quests.end(); it++)

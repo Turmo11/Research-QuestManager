@@ -31,7 +31,7 @@ void j1Map::Draw()
 	if (map_loaded == false)
 		return;
 
-	// TODO 4: Make sure we draw all the layers and not just the first one
+	
 	p2List_item<MapLayer*>* layer = data.layers.start;
 	while (layer != nullptr) {
 		for (int y = 0; y < data.height; ++y)
@@ -58,7 +58,7 @@ void j1Map::Draw()
 
 TileSet* j1Map::GetTilesetFromTileId(int id) const
 {
-	// TODO 3: Complete this method so we pick the right
+	
 	// Tileset based on a tile id //data.tilesets.start->data
 	TileSet* ret = nullptr;
 
@@ -418,8 +418,7 @@ bool j1Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 {
 	bool ret = false;
 
-	// TODO 6: Fill in the method to fill the custom properties from 
-	// an xml_node
+	
 	pugi::xml_node property_node = node.child("properties").child("property");
 	while (property_node != nullptr) {
 		properties.name = node.attribute("name").as_string();
