@@ -53,6 +53,10 @@ Many people might not agree, they may tell you that lots of huge games came out 
 
 After that short introduction, I'm sure you must be expecting the Quest Manager to be a real challenge, however the core basic Quest manager it would actually look something similar to this, which is basically manages an xml file from where we will get our quest data, and three lists to store and organize quests as they get loaded, activated or done.
 
-![](docs/images/core.PNG) _Quest Sytem Structure_ ![](docs/images/quest.PNG)  _Quests Structure_
+![](docs/images/core.PNG) _Quest Sytem Structure_ 
+
+We then also have a simple object _Quest_ with some of the info you might need when interacting with other systems
+
+![](docs/images/quest.PNG)  _Quests Structure_
 
 
