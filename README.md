@@ -1,10 +1,8 @@
-# QuestManager - Research
-
 ## Welcome
 
  Hi! My name is [Guillem Turmo Gonzalez](https://www.linkedin.com/in/gturmo/) and this is a Research Project about a Quest Manager I did as a student of the Bachelor's Degree in Video Games by UPC at CITM. This content is generated for the second year's subject Project 2, under supervision of lecturer [Ramon Santamaria](https://www.linkedin.com/in/raysan/). 
  
-![](https://github.com/Turmo11/Research-QuestManager/blob/master/docs/images/ProfilePic.png)
+![](docs/images/ProfilePic.png)
 
 ## What I'll be talking about
 
@@ -53,5 +51,18 @@ Many people might not agree, they may tell you that lots of huge games came out 
 
 ## Implementing a Quest System
 
-After that short introduction, I'm sure you must be expecting the Quest Manager to be a real challenge, however the core basic Quest manager it's actually just this:
+After that short introduction, I'm sure you must be expecting the Quest Manager to be a real challenge, however the core basic Quest manager it would actually look something similar to this, which is basically manages an xml file from where we will get our quest data, and three lists to store and organize quests as they get loaded, activated or done.
+
+![](docs/images/core.PNG)
+
+_Quest Sytem Structure_ 
+
+We then also have a simple object _Quest_ with some of the info you might need when interacting with other systems
+
+![](docs/images/quest.PNG) 
+
+_Quests Structure_
+
+One last thing to comment before getting with the TODO's, I've mentioned many times that the Quest System interacts with many different systems, that's why we will also usually create an Event System that is able to track the different events that happen in the game and is in charge of transferring all of that information to the quest system. However, you won't find a structured Event System in this project since I opted for a more simple and visual way of understanding a quest system. Once said that, let's head over the TODO's
+
 
