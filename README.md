@@ -1,8 +1,8 @@
 # QuestManager - Research
 
 ## Welcome
- 
- Hi! My name is [Guillem Turmo Gonzalez](https://www.linkedin.com/in/gturmo/) and I am currently a student of the Bachelor's degree in Videogame Design and Development from UPC. This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ramon Santamaria](https://www.linkedin.com/in/raysan/). 
+
+ Hi! My name is [Guillem Turmo Gonzalez](https://www.linkedin.com/in/gturmo/) and this is a Research Project about a Quest Manager I did as a student of the Bachelor's Degree in Video Games by UPC at CITM. This content is generated for the second year's subject Project 2, under supervision of lecturer [Ramon Santamaria](https://www.linkedin.com/in/raysan/). 
  
 ![](https://github.com/Turmo11/Research-QuestManager/blob/master/docs/images/ProfilePic.png)
 
@@ -43,9 +43,15 @@ Many people might not agree, they may tell you that lots of huge games came out 
 
 - Linearity: another aspect that should be considered is linearity, meaning whether or not your quests will have a mandatory order or the player will be able to walk a bit more freely throughout the game story. For example, you might not want a fully narrative-free story where the player can take the story anywhere but still want the player to feel in control, in that case you might wanna implement multiple solutions that take you to the same or similar endings.
 
-Capacity: how many quests are you planning on implementing in your game? will it be a fully quest-based game where they take the main role or will you just have a few as a gameplay support?
+- Capacity: how many quests are you planning on implementing in your game? will it be a fully quest-based game where they take the main role or will you just have a few as a gameplay support?
 
-Generation: when designing a Quest Manager, you also need to take into account how are your quests generated. You might either want to have a more wide range of randomly generated quests or have them be predefined by you, which takes us to next and final point
+- Generation: when designing a Quest Manager, you also need to take into account how are your quests generated. You might either want to have a more wide range of randomly generated quests or have them be predefined by you, which takes us to next and final point
 
-Modularity:
+- Modularity: it refers to how we group our quests since we can have two types of them: grouped and unique
+   - Grouped: we can divide quests in types such as _Gather, Kill, Escort, Interact, Hybrids, etc_ since they have similar behaviours, therefore allowing us to group them and being able to create similar ones from one template
+   - Unique: these are usually used as special narrative-decisive quests where the quest itself may have many other side-quests that you must complete in order to take on the main one
+
+## Implementing a Quest System
+
+After that short introduction, I'm sure you must be expecting the Quest Manager to be a real challenge, however the core basic Quest manager it's actually just this:
 
