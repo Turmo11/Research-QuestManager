@@ -73,6 +73,8 @@ One last thing to comment before getting with the TODO's, I've mentioned many ti
 
 The environment I chose for the project is a simple but yet very visual game that consists of a _player (blue square)_ that can move using WASD or the arrows. Its mission is to collect different fruits from the board (5 different types of fruits, Cherries, Bananas, Oranges, Watermelons and Mangoes). The main goal of the game is to earn five achievements completing quests
 
+![](docs/images/context2.png)
+
 We'll be working mainly on the QuestManager module and header but we will also use the App and the Scene modules, therefore you can ignore the rest since their only purpose is to support the game context and not the research itself
 
 ### TODO 0
@@ -83,13 +85,19 @@ We'll be working mainly on the QuestManager module and header but we will also u
 
 - Once you've understood this, take a bit more time to read and observe the syntax of the xml that we will be using to load the data called quest_data
 
+
+
 ### TODO 2
 
 - All of our data will be parsed from that XML, therefore we need to create a new function in the App that will read and load that XML for us
 
+![](docs/images/todo1.PNG)
+
 ### TODO 3
 
 - Now that we have the XML loaded, we'll begin loading all of the info into our Quest Manager. Remember to use the LoadQuest function we just created and to use the proper syntax. We will code a loop that creates a new_quest and loads all of its info for every quest on the XML
+
+![](docs/images/todo2.PNG)
 
 ### TODO 4
 
@@ -106,3 +114,9 @@ We'll be working mainly on the QuestManager module and header but we will also u
 ### TODO 7
 
 - As the final TODO, just take a look at how we are only drawing an achievement (quest completed) once they are in the finished_quests list. I'd also like you to take a look at how we make the 4th achievement a different quest by forcing the player to complete the side-quests in a particular order
+
+## Thanks!!
+
+## Interesting Links
+- [Playlist](https://www.youtube.com/playlist?list=PL4G2bSPE_8umJfOuXxut28OQyIliW2Pfp)
+- [Documentation](https://www.youtube.com/watch?v=QPOu4hIRCko&list=PLlOitY0Isb1qMfO2qXY_QxoDuax037ghb&index=26&t=323s)
