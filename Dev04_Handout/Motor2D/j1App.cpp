@@ -184,21 +184,6 @@ pugi::xml_node j1App::LoadConfig(pugi::xml_document& config_file) const
 
 //TODO 2: All of our data will be parsed from that XML, therefore we need to create a new function in the App that will read and load that XML for us
 
-pugi::xml_node j1App::LoadQuests(pugi::xml_document& file) const
-{
-	pugi::xml_node ret;
-
-	pugi::xml_parse_result result = file.load_file("quest_data.xml");
-
-	if (result == NULL)
-		LOG("Could not load  xml file <loadxmlfunction> pugi error: %s", result.description());
-	else
-		ret = file.child("quests");
-		LOG("XML LOADED");
-
-	return ret;
-}
-
 // ---------------------------------------------
 void j1App::PrepareUpdate()
 {

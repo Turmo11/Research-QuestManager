@@ -11,6 +11,10 @@ j1QuestManager::j1QuestManager() {}
 
 j1QuestManager::~j1QuestManager() 
 {
+	for (std::list <Quest*>::iterator it = quests_list.begin(); it != quests_list.end(); it++)
+	{
+		quests_list.erase(it);
+	}
 	for (std::list <Quest*>::iterator it = loaded_quests.begin(); it != loaded_quests.end(); it++) 
 	{
 		loaded_quests.erase(it);
@@ -36,7 +40,7 @@ bool j1QuestManager::Awake(pugi::xml_node& config)
 	//We will code a loop that creates a new_quest and loads all of its info for every quest on the XML
 
 	pugi::xml_node quest_node;
-	quest_node = App->LoadQuests(quest_data);  //Loads the xml file that you pass in the "xmlfile" and returns a node
+	quest_node = LoadQuests(quest_data);  //Loads the xml file that you pass in the "xmlfile" and returns a node
 
 	if (quest_node == NULL)
 	{
@@ -46,7 +50,6 @@ bool j1QuestManager::Awake(pugi::xml_node& config)
 	for (quest_node = quest_node.child("quest"); quest_node; quest_node = quest_node.next_sibling("quest"))
 	{
 		
-
 		Quest* new_quest = new Quest();
 
 		new_quest->id = quest_node.attribute("id").as_int();
@@ -69,7 +72,7 @@ bool j1QuestManager::Awake(pugi::xml_node& config)
 		{
 			loaded_quests.push_back(new_quest);
 		}
-		
+		quests_list.push_back(new_quest);
 	}
 
 	return true;
@@ -82,6 +85,21 @@ bool j1QuestManager::Start()
 
 	return true;
 
+}
+
+pugi::xml_node j1QuestManager::LoadQuests(pugi::xml_document& file) const
+{
+	pugi::xml_node ret;
+
+	pugi::xml_parse_result result = file.load_file("quest_data.xml");
+
+	if (result == NULL)
+		LOG("Could not load  xml file <loadxmlfunction> pugi error: %s", result.description());
+	else
+		ret = file.child("quests");
+	LOG("XML LOADED");
+
+	return ret;
 }
 
 

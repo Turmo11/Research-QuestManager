@@ -58,9 +58,6 @@ public:
 	// Load config file
 	pugi::xml_node LoadConfig(pugi::xml_document&) const;
 
-	//Load quest file
-	pugi::xml_node LoadQuests(pugi::xml_document& quest_file) const;
-
 private:
 
 	
